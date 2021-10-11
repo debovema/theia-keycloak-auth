@@ -1,0 +1,47 @@
+{
+  "name": "@debovema/theia-keycloak-auth",
+  "version": "15.0.2",
+  "author": "Mathieu Debove <mathieu@debove.dev>",
+  "license": "EPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/debovema/theia-keycloak-auth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/debovema/theia-keycloak-auth/issues"
+  },
+  "homepage": "https://github.com/debovema/theia-keycloak-auth",
+  "keywords": [
+    "theia-extension",
+    "keycloak",
+    "auth",
+    "oidc"
+  ],
+  "files": [
+    "lib",
+    "src"
+  ],
+  "dependencies": {
+    "@theia/core": "^1.18.0",
+    "dotenv": "^10.0.0",
+    "express-session": "^1.17.2",
+    "@debovema/keycloak-connect": "15.0.2-7258",
+    "keycloak-js": "^15.0.2"
+  },
+  "devDependencies": {
+    "rimraf": "latest",
+    "typescript": "latest",
+    "@types/express-session": "^1.17.4"
+  },
+  "scripts": {
+    "prepare": "yarn run clean && yarn run build",
+    "clean": "rimraf lib",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "theiaExtensions": [
+    {
+      "backend": "lib/node/keycloak-auth-module"
+    }
+  ]
+}
